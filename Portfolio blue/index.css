@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Josefin Sans", sans-serif;
+}
+html {
+  font-size: 60%;
+  overflow: hidden;
+}
+:root {
+  --main-color: #00ffee;
+  --text-color: #fff;
+  --bg-color: #080808;
+  --second-bg-color: #131313;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+div.home {
+  padding: 3rem 10%;
+  height: 100vh;
+}
+
+div.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 12% 4rem;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+.logo span {
+  text-shadow: 0 0 25px var(--main-color), 0 0 25px var(--main-color);
+}
+.navbar a {
+  font-size: 1.8rem;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: solid 3px transparent;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+div.header ul.navbar li.navbarlink {
+  margin-left: 13px;
+  list-style-type: none;
+}
+div.header ul.navbar li.navbarlink a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  border-bottom: solid 2px transparent;
+  padding-bottom: 4px;
+}
+.blueColor,
+div.header ul.navbar li.navbarlink a:hover {
+  color: var(--main-color) !important;
+  transition: 0.3s ease;
+}
+a.blueColor,
+div.header ul.navbar li.navbarlink a:hover {
+  border-bottom: solid 2px var(--main-color) !important;
+}
+
+div.homeBody {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.homeBody div.homeBodyText {
+  width: 50%;
+}
+div.homeBodyImage {
+  border-radius: 50%;
+}
+img.profilImage {
+  width: 51%;
+  height: 60%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--main-color);
+  position: relative;
+  left: 40%;
+  transition: 0.3s ease;
+}
+img.profilImage:hover {
+  box-shadow: 0 0 20px var(--main-color), 0 0 20px var(--main-color),
+    0 0 20px var(--main-color);
+  cursor: pointer;
+}
+
+.TitleHomeBody {
+  font-size: 49px;
+  margin-bottom: 15px;
+}
+.textAnimation {
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  min-width: 280px;
+}
+.textAnimation span {
+  position: relative;
+}
+.textAnimation span::before {
+  content: "web developer";
+  color: var(--main-color);
+  animation: words 20s infinite;
+}
+
+.textAnimation span::after {
+  content: "";
+  background: var(--bg-color);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid var(--main-color);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to{
+    border-left: 2px solid var(--main-color);
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "frontend developer";
+  }
+  21%,
+  40% {
+    content: "backend developer";
+  }
+  41%,
+  60% {
+    content: "ui / ux designer";
+  }
+  61%,
+  80% {
+    content: "fullstack developer";
+  }
+  81%,
+  100% {
+    content: "software Tester";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px); /* عرض النص بالكامل */
+  }
+}
+.TextHomeBody {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+div.homeBodySocialMedia a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  font-size: 2.5rem;
+  border-radius: 50%;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease-in-out;
+}
+div.homeBodySocialMedia a:hover {
+  color: var(--text-color);
+  transform: scale(1.3) translateY(-5px);
+  background: var(--main-color);
+  box-shadow: 0 0 20px var(--main-color);
+}
+
+button.btn {
+  border: 2px solid var(--main-color);
+  border-radius: 25px;
+  padding: 8px 18px;
+  background: transparent;
+  margin-right: 20px;
+  transition: 0.3s ease-in-out;
+  font-size: 1.6rem;
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+button.btn:hover,
+.hire {
+  cursor: pointer;
+  background: var(--main-color) !important;
+  box-shadow: 0 0 25px var(--main-color);
+}
